@@ -8,9 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let menu = Bundle.main.decode([MenuSection].self, from: "menu.json")
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                // populate the list dynamically
+                ForEach(menu) { menuSection in
+                    Section(header: Text(menuSection.name)) {
+                        // nest the items within each section
+                        ForEach(menuSection.items) { item in
+                            Text(item.name)
+                        }
+                    }
+                }
+            }.navigationTitle("Hellos")
+            .listStyle(GroupedListStyle())
+        }
     }
 }
 
