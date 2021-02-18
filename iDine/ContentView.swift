@@ -19,7 +19,7 @@ struct ContentView: View {
                     Section(header: Text(menuSection.name)) {
                         // nest the items within each section
                         ForEach(menuSection.items) { item in
-                            Text(item.name)
+                            ItemRow(item: item)
                         }
                     }
                 }
