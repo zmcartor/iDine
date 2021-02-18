@@ -19,7 +19,9 @@ struct ContentView: View {
                     Section(header: Text(menuSection.name)) {
                         // nest the items within each section
                         ForEach(menuSection.items) { item in
-                            ItemRow(item: item)
+                            NavigationLink(destination: ItemDetail(item: item)) {
+                                ItemRow(item: item)
+                            }
                         }
                     }
                 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9864D54425DEFDDE00CD9D0C /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9864D54325DEFDDE00CD9D0C /* ItemDetail.swift */; };
 		987D8EDC25DD9B650075CA1C /* iDineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D8EDB25DD9B650075CA1C /* iDineApp.swift */; };
 		987D8EDE25DD9B650075CA1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D8EDD25DD9B650075CA1C /* ContentView.swift */; };
 		987D8EE025DD9B660075CA1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987D8EDF25DD9B660075CA1C /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9864D54325DEFDDE00CD9D0C /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		987D8ED825DD9B650075CA1C /* iDine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987D8EDB25DD9B650075CA1C /* iDineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iDineApp.swift; sourceTree = "<group>"; };
 		987D8EDD25DD9B650075CA1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				987D8EDB25DD9B650075CA1C /* iDineApp.swift */,
+				9864D54325DEFDDE00CD9D0C /* ItemDetail.swift */,
 				987D8EF425DEEE860075CA1C /* ItemRow.swift */,
 				987D8EEB25DD9CE30075CA1C /* Helper.swift */,
 				987D8EEC25DD9CE30075CA1C /* menu.json */,
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9864D54425DEFDDE00CD9D0C /* ItemDetail.swift in Sources */,
 				987D8EDE25DD9B650075CA1C /* ContentView.swift in Sources */,
 				987D8EDC25DD9B650075CA1C /* iDineApp.swift in Sources */,
 				987D8EF225DD9CE30075CA1C /* Order.swift in Sources */,
