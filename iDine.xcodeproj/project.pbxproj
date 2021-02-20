@@ -17,6 +17,7 @@
 		987D8EF125DD9CE30075CA1C /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D8EED25DD9CE30075CA1C /* Menu.swift */; };
 		987D8EF225DD9CE30075CA1C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D8EEE25DD9CE30075CA1C /* Order.swift */; };
 		987D8EF525DEEE860075CA1C /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987D8EF425DEEE860075CA1C /* ItemRow.swift */; };
+		9883939725E1B10C0014740E /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9883939625E1B10C0014740E /* OrderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		987D8EED25DD9CE30075CA1C /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = ../../../../../Downloads/idine/Menu.swift; sourceTree = "<group>"; };
 		987D8EEE25DD9CE30075CA1C /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = ../../../../../Downloads/idine/Order.swift; sourceTree = "<group>"; };
 		987D8EF425DEEE860075CA1C /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		9883939625E1B10C0014740E /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		987D8ECF25DD9B650075CA1C = {
 			isa = PBXGroup;
 			children = (
+				9883939625E1B10C0014740E /* OrderView.swift */,
 				987D8EDA25DD9B650075CA1C /* iDine */,
 				987D8ED925DD9B650075CA1C /* Products */,
 			);
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9864D54425DEFDDE00CD9D0C /* ItemDetail.swift in Sources */,
+				9883939725E1B10C0014740E /* OrderView.swift in Sources */,
 				987D8EDE25DD9B650075CA1C /* ContentView.swift in Sources */,
 				987D8EDC25DD9B650075CA1C /* iDineApp.swift in Sources */,
 				987D8EF225DD9CE30075CA1C /* Order.swift in Sources */,
