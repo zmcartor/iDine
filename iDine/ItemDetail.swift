@@ -9,6 +9,11 @@ import SwiftUI
 
 struct ItemDetail: View {
     let item: MenuItem
+    
+    // we don't have to initialize this becuase it will have an value from env.
+    // if no value exists, runtime crash
+    @EnvironmentObject var order: Order
+    
     var body: some View {
         VStack() {
             ZStack(alignment: .bottomTrailing) {
@@ -25,6 +30,13 @@ struct ItemDetail: View {
             }
             Text(item.description)
                 .padding()
+            
+            Button("Order This") {
+                order.add(item: item)
+            }
+            .font(.headline)
+            .foregroundColor(.orange)
+            
             Spacer()
         }
         .navigationTitle(item.name)
@@ -38,6 +50,8 @@ struct ItemDetail_Previews: PreviewProvider {
         // Put in a nav view, so view is previewed correctly :D
         NavigationView {
             ItemDetail(item: MenuItem.example)
+                .environmentObject(Order()) // inject a fake order to render the preview screen.
+
         }
     }
 }
