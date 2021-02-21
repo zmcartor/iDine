@@ -11,20 +11,55 @@ struct CheckoutView: View {
     @EnvironmentObject var order: Order
     let paymentTypes = ["BTC", "Credit", "cash lol"]
     
+    let tipAmounts = [0, 10, 15, 20, 25]
     //picker state
     @State private var paymentType = "whatever"
+    @State private var tipAmount = 0
+    @State private var addLoyaltyDetails = false
+    @State private var loyaltyNumber = ""
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Section() {
-                    Picker("How do you wanna pay?", selection: $paymentType) {
-                        ForEach(paymentTypes, id: \.self) { type in
-                            Text(type)
-                        }
-                    }
+        Form {
+            loyaltyPaymentSection
+            tipPickerSection
+            confirmSection
+        }
+    }
+    
+    private var confirmSection: some View {
+        Section(header: Text("Total: $00")) {
+            
+            Button("Place Order") {
+                // place the oder yo
+            }
+        }
+    }
+    
+    private var tipPickerSection: some View {
+        
+        Section(header: Text("Add a tip")) {
+            Picker("Percentage:", selection: $tipAmount) {
+                ForEach(tipAmounts, id: \.self) { a in
+                    Text("\(a)%")
                 }
-            }.navigationTitle("Payment")
+            }.pickerStyle(SegmentedPickerStyle())
+        }
+    }
+    
+    private var loyaltyPaymentSection: some View {
+        Section() {
+            // animation on binding causes smooth appearence of the toggle
+            Toggle("Add a loyalty card", isOn: $addLoyaltyDetails.animation())
+            
+            if addLoyaltyDetails {
+                TextField("Enter your id", text: $loyaltyNumber)
+            }
+            
+            Picker("How do you wanna pay?", selection: $paymentType) {
+                ForEach(paymentTypes, id: \.self) { type in
+                    Text(type)
+                }
+            }
         }
     }
 }
