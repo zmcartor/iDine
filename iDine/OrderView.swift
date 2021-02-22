@@ -17,6 +17,10 @@ struct OrderView: View {
     
     private var orderList: some View {
         Section {
+            if order.items.isEmpty {
+                Text("Order is empty!")
+            }
+            
             ForEach(order.items) { item in
                 HStack {
                     Text(item.name)
@@ -35,6 +39,7 @@ struct OrderView: View {
             NavigationLink(destination: CheckoutView()) {
                 Text("Place Order")
             }
+            .disabled(order.items.isEmpty)
         }
     }
     
@@ -46,6 +51,11 @@ struct OrderView: View {
             }
             .navigationTitle("Order")
             .listStyle(InsetGroupedListStyle())
+            .toolbar {
+                ToolbarItem {
+                EditButton()
+                }
+            }
         }
     }
 }
