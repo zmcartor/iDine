@@ -11,6 +11,10 @@ struct OrderView: View {
     
     @EnvironmentObject var order: Order
     
+    private func deleteItems(at offsets: IndexSet) {
+        order.items.remove(atOffsets: offsets)
+    }
+    
     private var orderList: some View {
         Section {
             ForEach(order.items) { item in
@@ -22,7 +26,7 @@ struct OrderView: View {
                         .font(.subheadline)
                         .foregroundColor(.red)
                 }
-            }
+            }.onDelete(perform: deleteItems)
         }
     }
     
