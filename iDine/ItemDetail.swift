@@ -14,6 +14,8 @@ struct ItemDetail: View {
     // if no value exists, runtime crash
     @EnvironmentObject var order: Order
     
+    @State private var showingConfirm = false
+    
     var body: some View {
         VStack() {
             ZStack(alignment: .bottomTrailing) {
@@ -33,9 +35,19 @@ struct ItemDetail: View {
             
             Button("Order This") {
                 order.add(item: item)
+                showingConfirm.toggle()
             }
             .font(.headline)
             .foregroundColor(.orange)
+            .alert(isPresented: $showingConfirm, content: {
+                Alert(title: Text("Order"), message: Text("Added to order"), dismissButton: .default(Text("Okay")))
+            })
+            
+            if order.items.contains(item) {
+                Text("Order contains this item!")
+                    .font(.subheadline)
+                    .fontWeight(.light)
+            }
             
             Spacer()
         }
