@@ -17,6 +17,7 @@ struct CheckoutView: View {
     @State private var tipAmount = 0
     @State private var addLoyaltyDetails = false
     @State private var loyaltyNumber = ""
+    @State private var showingPaymentAlert = false
     
     var body: some View {
         Form {
@@ -24,13 +25,18 @@ struct CheckoutView: View {
             tipPickerSection
             confirmSection
         }
+        .alert(isPresented: $showingPaymentAlert, content: {
+            Alert(title: Text("order confirmed"),
+                  message: Text("total was free"),
+                  dismissButton: .default(Text("Ok")))
+        })
     }
     
     private var confirmSection: some View {
         Section(header: Text("Total: $00")) {
             
             Button("Place Order") {
-                // place the oder yo
+                showingPaymentAlert.toggle()
             }
         }
     }
